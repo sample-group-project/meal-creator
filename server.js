@@ -23,16 +23,37 @@ application.get('/index', (request, response) => {
 });
 
 application.post('/index/add-meal', (request, response) => {
+    // should pull value of whatever radio button is pressed
     var mealType = request.body.type;
     var mealName = request.body.name;
     var mealCalories = request.body.calories;
 
     if (mealType == "breakfast") {
         var breakfastType = data.breakfast;
+        var newMeal = {
+            description: mealName,
+            calories: mealCalories
+        }
+
+        var addMeal = breakfastType.push(newMeal);
+
         response.json(breakfastType);
+    } else if (mealType == "lunch") {
+        var lunchType = data.lunch;
+        var newMeal = {
+            description: mealName,
+            calories: mealCalories
+        }
+
+        var addMeal = lunchType.push(newMeal);
+
+        response.json(lunchType);
+    } else if ( x) {
+
     } else {
         response.json('nope');
     }
+
 });
 
 application.post('/index/view-meal/:meal', (request, response) => {
