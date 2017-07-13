@@ -22,6 +22,22 @@ application.get('/index', (request, response) => {
     response.render('index');
 });
 
+application.get('/get/breakfast', (request, response) => {
+    response.render('view-meals', model);
+})
+
+application.get('/get/lunch', (request, response) => {
+    response.render('view-meals', model);
+})
+
+application.get('/get/dinner', (request, response) => {
+    response.render('view-meals', model);
+})
+
+application.get('/get/day', (request, response) => {
+    response.render('view-meals', model);
+})
+
 application.post('/index/add-meal', (request, response) => {
     // should pull value of whatever radio button is pressed
     var mealType = request.body.type;
@@ -74,7 +90,6 @@ application.post('/index/add-meal', (request, response) => {
     } else {
         response.render('add-meal');
     }
-
 });
 
 application.post('/index/view-meal/:meal', (request, response) => {
