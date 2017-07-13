@@ -22,26 +22,6 @@ application.get('/index', (request, response) => {
     response.render('index');
 });
 
-application.get('/get/breakfast', (request, response) => {
-    response.render('view-meals', model);
-})
-
-application.get('/get/lunch', (request, response) => {
-    response.render('view-meals', model);
-})
-
-application.get('/get/dinner', (request, response) => {
-    response.render('view-meals', model);
-})
-
-application.get('/get/day', (request, response) => {
-    response.render('view-meals', model);
-})
-
-application.get('/index/add-meal' , (request, response) => {
-    response.render('add-meal');
-});
-
 application.post('/index/add-meal', (request, response) => {
     // should pull value of whatever radio button is pressed
     var mealType = request.body.type;
@@ -98,6 +78,32 @@ application.post('/index/add-meal', (request, response) => {
 
 application.post('/index/view-meal/:meal', (request, response) => {
     var chosenMeal = request.params.meal;
+
+    var breakfastMeals = data.breakfast;
+    var lunchMeals = data.lunch;
+    var dinnerMeals = data.dinner;
+
+    var breakfastIndex = Math.floor(Math.random() * breakfastMeal.length);
+    var lunchIndex = Math.floor(Math.random() * lunchMeal.length);
+    var dinnerIndex = Math.floor(Math.random() * dinnerMeal.length);
+
+    var randomBreakfast = breakfastMeals[breakfastIndex];
+    var randomLunch = lunchMeals[lunchIndex];
+    var randomDinner = dinnerMeals[dinnerIndex];
+
+    if (chosenMeal == 'breakfast') {
+        let model = { meal: randomBreakfast };
+        response.render('view-meals', model)
+    } else if (chosenMeal == 'lunch') {
+        let model = { meal: randomLunch };
+        response.render('view-meals', model)
+    } else if (chosenMeal == 'dinner') {
+        let model = { meal: randomDinner };
+        response.render('view-meals', model)
+    } else if (chosenMeal == 'day') {
+        var model = { meal: [randomBreakfast, randomLunch, randomDinner] };
+        response.render('view-meails', model);
+    }
 })
 
 // model = {
