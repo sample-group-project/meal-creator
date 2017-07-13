@@ -1,3 +1,81 @@
+/* COLOR SCHEME: dark orange: #e37222, light orange: #f1aa7e, dark blue: #08899e, light blue: #65babf, grey: #f1f1ef */
+
+/************************* Resets *************************/
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: #e37222;
+    text-decoration: none; 
+}
+
+body {
+    margin: 0;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+}
+
+
+/************************* Helpers *************************/
+
+.fade, a {
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+.fade:hover, a:hover {
+    opacity: .5;
+}
+
+.wrapper {
+    max-width: 1000px;
+    padding: 0 32px;
+    margin: auto;
+}
+
+
+/************************* Typography *************************/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
 h1 {
-    color: blue;
+    font-family: 'Kurale', serif;
+}
+
+/************************* Header / Nav *************************/
+
+header {
+    background: #f1f1ef;
+}
+
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    line-height: 60px;
+    padding-bottom: 4px;
+    margin-bottom: 0;
+}
+
+header i.fa {
+    font-size: 18px;
+    margin-right: 14px;
+    position: relative;
+    bottom: 4px;
 }
