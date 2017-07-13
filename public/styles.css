@@ -1,3 +1,196 @@
+/* COLOR SCHEME: dark orange: #e37222, light orange: #f1aa7e, dark blue: #08899e, light blue: #65babf, grey: #f1f1ef */
+
+/************************* Resets *************************/
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: #e37222;
+    text-decoration: none; 
+}
+
+body {
+    margin: 0;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+}
+
+
+/************************* Helpers *************************/
+
+.fade, a {
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+.fade:hover, a:hover {
+    opacity: .5;
+}
+
+.wrapper {
+    max-width: 1000px;
+    padding: 0 32px;
+    margin: auto;
+}
+
+
+/************************* Typography *************************/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #666;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
 h1 {
-    color: blue;
+    font-family: 'Kurale', serif;
+}
+
+/************************* Header / Nav *************************/
+
+header {
+    background: #f1f1ef;
+    box-shadow: 0px 0px 2px rgba(0,0,0,.35);
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    line-height: 64px;
+    margin-bottom: 0;
+}
+
+header i.fa {
+    font-size: 18px;
+    margin-right: 14px;
+    position: relative;
+    bottom: 4px;
+}
+
+nav a {
+    display: inline-block;
+    height: 64px;
+    color: #08899e;
+    line-height: 64px;
+    margin-left: 50px;
+}
+
+nav a:last-child {
+    padding: 0 20px;
+    color: #fff;
+    background: #08899e;
+}
+
+/************************* Main Content *************************/
+
+main {
+    background: url('main-bg.jpg') center center / cover no-repeat;
+    min-height: calc(100vh - 110px);
+    padding: 50px 0 50px;
+    margin-top: 64px;
+}
+
+main.table {
+    display: table;
+    width: 100%;
+}
+
+main.table > div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+form.add-meal {
+    max-width: 500px;
+    margin: auto;
+    background: #fff;
+    padding: 0 0 40px;
+    box-shadow: -1px 0px 23px -2px rgba(0,0,0,0.3);
+    border-radius: 3px;
+    border: 1px solid silver;
+}
+
+form.add-meal h2 {
+    padding: 10px 30px;
+    margin-bottom: 25px;
+    text-align: center;
+    background: #65babf;
+    color: #fff;
+}
+
+form.add-meal > div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 40px;
+}
+
+input, select, textarea {
+    padding: 5px 10px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+}
+
+button {
+    all: unset;
+    color: #fff;
+    background: #e37222;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    background: #ea9559;
+}
+
+.add-meal input, .add-meal select, .add-meal textarea {
+    flex-basis: calc(50% - 5px);
+    margin-bottom: 20px;
+    font-size: .95em;
+    border: 1px solid silver;
+    background: #fafafa;
+}
+
+.add-meal input:focus, .add-meal select:focus, .add-meal textarea:focus {
+    border: 1px solid #65babf;
+    background: #fff;
+}
+
+.add-meal textarea, .add-meal button {
+    flex-basis: calc(100%);
+}
+
+
+/************************* Footer *************************/
+
+footer {
+    border-top: 1px solid #f1f1ef;
+    text-align: center;
+    background: #fafafa;
+}
+
+footer p {
+    color: #65babf;
+    line-height: 46px;
+    margin: 0;
 }
