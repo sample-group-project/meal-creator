@@ -1,13 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../public/styles.css">
+    <title>Meal Planner</title>
 </head>
 
 <body>
-    <h1>Connected to the server</h1>
+    <header>
+        <form method="GET" action="/index/add-meal">
+            <button type="submit">Create New Meal</button>
+        </form>
+
+    </header>
+    <main>
+        <div>
+            <h1>Meal Planner</h1>
+            <p> Are you tired of having to plan what to eat three times a day but don't want to pay an expensive meal service
+                to deliver meals to your door? With our meal planner you no longer have to worry! You can upload your meals
+                to Meal Planner and choose your meals for breakfast, lunch, dinner and even all three! Gone are the days
+                of wasting time making useless decisions. Meal Planner has you covered! </p>
+        </div>
+        <div>
+            <form method="POST" action="/index/view-meal/:meal">
+                <select name="meal">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="day">Full Day!</option>
+                </select>
+            </form>
+    </main>
+    <footer>
+    </footer>
 </body>
 
 </html>
