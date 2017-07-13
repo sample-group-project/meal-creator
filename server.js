@@ -15,7 +15,39 @@ application.use(bodyParser.urlencoded());
 application.use('/public', express.static('./public'));
 
 application.get('/', (request, response) => {
+    response.redirect('/index');
+});
+
+application.get('/index', (request, response) => {
     response.render('index');
 });
+
+application.get('/get/breakfast', (request, response) => {
+    response.render('view-meals', model);
+})
+
+application.get('/get/lunch', (request, response) => {
+    response.render('view-meals', model);
+})
+
+application.get('/get/dinner', (request, response) => {
+    response.render('view-meals', model);
+})
+
+application.get('/get/day', (request, response) => {
+    response.render('view-meals', model);
+})
+
+application.post('/index/add-meal', (request, response) => {
+    var mealType = request.body.type;
+    var mealName = request.body.name;
+
+
+    
+});
+// model = {
+//     description: meal.description,
+//     calories: meal.calories
+// }
 
 application.listen(3000);
