@@ -106,9 +106,4 @@ application.post('/index/view-meal/:meal', (request, response) => {
     }
 })
 
-// model = {
-//     description: meal.description,
-//     calories: meal.calories
-// }
-
 application.listen(3000);
