@@ -22,6 +22,10 @@ application.get('/index', (request, response) => {
     response.render('index');
 });
 
+application.get('/index/add-meal', (request, response) => {
+    response.render('add-meal');
+});
+
 application.post('/index/add-meal', (request, response) => {
     // should pull value of whatever radio button is pressed
     var mealType = request.body.type;
