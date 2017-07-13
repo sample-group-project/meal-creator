@@ -18,10 +18,21 @@
       <nav><a href="/view-meals">View Meals</a><a href="/add-meal">Add Meal</a></nav>
     </div>
   </header>
-  <main>
+  <main class="table">
     <div class="wrapper">
       <form class="add-meal">
-
+        <h2>Add Meal</h2>
+        <div>
+          <select name="type">
+            <option disabled selected>Meal Type</option>
+            <option>Breakfast</option>
+            <option>Lunch</option>
+            <option>Dinner</option>
+          </select>
+          <input type="text" name="calories" placeholder="Meal Calories">
+          <textarea rows="4" placeholder="Describe your meal..."></textarea>
+          <button>Submit</button>
+        </div>
       </form>
     </div>
   </main>
