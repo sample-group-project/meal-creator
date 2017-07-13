@@ -94,6 +94,27 @@ application.post('/index/add-meal', (request, response) => {
 
 application.post('/index/view-meal/:meal', (request, response) => {
     var chosenMeal = request.params.meal;
+
+    var breakfastMeal = data.breakfast;
+    var lunchMeal = data.lunch;
+    var dinnerMeal = data.dinner;
+
+    var breakfastIndex = Math.floor(Math.random() * breakfastMeal.length);
+    var lunchIndex = Math.floor(Math.random() * lunchMeal.length);
+    var dinnerIndex = Math.floor(Math.random() * dinnerMeal.length);
+
+
+    if (chosenMeal == 'breakfast') {
+        var randomBreakfast = breakfastMeal[breakfastIndex]
+
+        response.json(randomBreakfast)
+    } else if (chosenMeal == 'lunch') {
+
+    } else if (chosenMeal == 'dinner') {
+
+    } else if (chosenMeal == 'day') {
+
+    }
 })
 
 // model = {
