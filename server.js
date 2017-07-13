@@ -25,9 +25,20 @@ application.get('/index', (request, response) => {
 application.post('/index/add-meal', (request, response) => {
     var mealType = request.body.type;
     var mealName = request.body.name;
+    var mealCalories = request.body.calories;
 
-    
+    if (mealType == "breakfast") {
+        var breakfastType = data.breakfast;
+        response.json(breakfastType);
+    } else {
+        response.json('nope');
+    }
 });
+
+application.post('/index/view-meal/:meal', (request, response) => {
+    var chosenMeal = request.params.meal;
+})
+
 // model = {
 //     description: meal.description,
 //     calories: meal.calories
