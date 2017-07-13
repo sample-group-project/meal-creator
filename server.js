@@ -35,9 +35,13 @@ application.post('/index/add-meal', (request, response) => {
             calories: mealCalories
         }
 
-        var addMeal = breakfastType.push(newMeal);
+        let addBreakfast = breakfastType.push(newMeal);
 
-        response.json(breakfastType);
+        var saveJSONData = JSON.stringify(data);
+        fs.writeFile('./models/data.json', saveJSONData, function (err) { });
+
+        response.redirect('/index');
+
     } else if (mealType == "lunch") {
         var lunchType = data.lunch;
         var newMeal = {
@@ -45,13 +49,30 @@ application.post('/index/add-meal', (request, response) => {
             calories: mealCalories
         }
 
-        var addMeal = lunchType.push(newMeal);
+        let addLunch = lunchType.push(newMeal);
 
-        response.json(lunchType);
-    } else if ( x) {
+        var saveJSONData = JSON.stringify(data);
+        fs.writeFile('./models/data.json', saveJSONData, function (err) { });
+
+        response.redirect('/index');
+
+    } else if (mealType == "dinner") {
+
+        var dinnerType = data.dinner;
+        var newMeal = {
+            description: mealName,
+            calories: mealCalories
+        }
+
+        let addDinner = dinnerType.push(newMeal);
+
+        var saveJSONData = JSON.stringify(data);
+        fs.writeFile('./models/data.json', saveJSONData, function (err) { });
+
+        response.redirect('/index');
 
     } else {
-        response.json('nope');
+        response.render('add-meal');
     }
 
 });
