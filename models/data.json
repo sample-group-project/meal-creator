@@ -1,3 +1,26 @@
-{
-    
-}
+[
+    {
+        "breakfast": [
+            {
+                "description": "waffles",
+                "calories": 500
+            }
+        ]
+    },
+    {
+        "lunch": [
+            {
+                "description": "macaroni",
+                "calories": 1000
+            }
+        ]
+    },
+    {
+        "dinner": [
+            {
+                "description": "steak",
+                "calories": 1500
+            }
+        ]
+    }
+]
