@@ -38,6 +38,10 @@ application.get('/get/day', (request, response) => {
     response.render('view-meals', model);
 })
 
+application.get('/index/add-meal' , (request, response) => {
+    response.render('add-meal');
+});
+
 application.post('/index/add-meal', (request, response) => {
     var mealType = request.body.type;
     var mealName = request.body.name;
